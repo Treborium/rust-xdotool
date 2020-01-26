@@ -1,5 +1,5 @@
 [package]
-name = "rust-xdotool"
+name = "xdotool"
 version = "0.1.0"
 authors = ["Robert Fuchs <robertfuchs97@gmail.com>"]
 edition = "2018"

@@ -12,16 +12,16 @@ impl<T: fmt::Display> OptionVec<T> {
 impl<T: fmt::Display> fmt::Display for OptionVec<T> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let mut space_separated = String::new();
-        
+
         if !self.0.is_empty() {
             for thing in &self.0[0..self.0.len() - 1] {
                 space_separated.push_str(&thing.to_string());
                 space_separated.push_str(" ");
             }
-            
+
             space_separated.push_str(&self.0[self.0.len() - 1].to_string());
         }
-        
+
         write!(f, "{}", space_separated)
     }
 }
@@ -57,7 +57,6 @@ impl fmt::Display for Command {
     }
 }
 
-
 pub mod sub_commands {
     use super::OptionVec;
 
@@ -79,7 +78,7 @@ pub mod sub_commands {
             }
         }
     }
-    
+
     #[derive(Debug)]
     pub enum Mouse {
         MouseMove(OptionVec<super::options::MouseMoveOption>),
@@ -104,7 +103,7 @@ pub mod sub_commands {
             }
         }
     }
-    
+
     #[derive(Debug)]
     pub enum Window {
         Search(OptionVec<super::options::SearchOption>),
@@ -151,7 +150,7 @@ pub mod sub_commands {
             }
         }
     }
-    
+
     #[derive(Debug)]
     pub enum Desktop {
         WindowActivate(OptionVec<super::options::Sync>),
@@ -179,11 +178,10 @@ pub mod sub_commands {
                 Desktop::GetDesktop => write!(f, "get_desktop"),
                 Desktop::SetDesktopForWindow(o) => write!(f, "set_desktop_for_window {}", o),
                 Desktop::GetDesktopForWindow => write!(f, "get_desktop_for_window"),
-
             }
         }
     }
-    
+
     #[derive(Debug)]
     pub enum Misc {
         Exec(OptionVec<super::options::Sync>),
@@ -195,7 +193,6 @@ pub mod sub_commands {
             match &*self {
                 Misc::Exec(o) => write!(f, "exec {}", o),
                 Misc::Sleep => write!(f, "sleep"),
-
             }
         }
     }
@@ -293,10 +290,10 @@ pub mod options {
 
     #[derive(Debug)]
     pub enum SearchOption {
-        Class(String),
-        ClassName(String),
+        Class,
+        ClassName,
         MaxDepth(i32),
-        Name(String),
+        Name,
         OnlyVisible,
         Pid(u32),
         Screen(u8),
@@ -310,10 +307,10 @@ pub mod options {
     impl super::fmt::Display for SearchOption {
         fn fmt(&self, f: &mut super::fmt::Formatter) -> super::fmt::Result {
             match &*self {
-                SearchOption::Class(x) => write!(f, "--class {}", x),
-                SearchOption::ClassName(x) => write!(f, "--classname {}", x),
+                SearchOption::Class => write!(f, "--class"),
+                SearchOption::ClassName => write!(f, "--classname"),
                 SearchOption::MaxDepth(x) => write!(f, "--maxdepth {}", x),
-                SearchOption::Name(x) => write!(f, "--name {}", x),
+                SearchOption::Name => write!(f, "--name"),
                 SearchOption::OnlyVisible => write!(f, "--onlyvisible"),
                 SearchOption::Pid(x) => write!(f, "--pid {}", x),
                 SearchOption::Screen(x) => write!(f, "--screen {}", x),
@@ -342,7 +339,7 @@ pub mod options {
     #[derive(Debug)]
     pub enum WindowSizeOption {
         UseHints,
-        Sync
+        Sync,
     }
 
     impl super::fmt::Display for WindowSizeOption {

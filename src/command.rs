@@ -1,6 +1,6 @@
 use std::fmt;
 
-#[derive(Debug)]
+#[derive(Debug, Default)]
 pub struct OptionVec<T: fmt::Display>(pub Vec<T>);
 
 impl<T: fmt::Display> OptionVec<T> {

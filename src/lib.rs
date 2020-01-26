@@ -13,7 +13,7 @@ pub fn run(command: command::Command, args: &str) -> Output {
         .arg("-c")
         .arg(cmd)
         .output()
-        .expect(&format!("Failed to execute 'xdotool key {}", args))
+        .unwrap_or_else(|_| panic!("Failed to execute 'xdotool key {}", args))
 }
 
 #[cfg(test)]

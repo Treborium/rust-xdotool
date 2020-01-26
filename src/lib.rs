@@ -1,4 +1,5 @@
 pub mod keyboard;
+pub mod command;
 
 #[cfg(test)]
 mod tests {

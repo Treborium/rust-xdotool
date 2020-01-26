@@ -2,9 +2,8 @@ use std::process::Command;
 use std::process::ExitStatus;
 
 use std::fmt;
-use std::io::{self, Write};
 
-// This function is onl visible crate internally
+// This function is only visible crate internally
 pub(crate) fn xdotool_key(args: &str) -> ExitStatus {
     println!("{}", format!("xdotool key {}", args));
 
@@ -30,7 +29,6 @@ pub fn parse_string(s: &str) -> String {
     ret
 }
 
-
 pub fn send_keys(keys: &str) -> ExitStatus {
     xdotool_key(keys)
 }
@@ -50,7 +48,7 @@ pub fn send_keys_with_options(keys: &str, options: &[&Option]) -> ExitStatus {
 pub enum Option {
     Window(String),
     ClearModifiers,
-    Delay(u32),  // Delay in milliseconds
+    Delay(u32), // Delay in milliseconds
 }
 
 impl fmt::Display for Option {

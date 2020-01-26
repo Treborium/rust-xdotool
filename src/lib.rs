@@ -6,9 +6,12 @@ pub mod command;
 
 
 pub fn run(command: command::Command, args: &str) -> ExitStatus {
+    let cmd = format!("xdotool {} \"{}\"", command, args);
+    println!("{}", cmd);
+
     Command::new("sh")
         .arg("-c")
-        .arg(format!("xdotool {} {}", command, args))
+        .arg(cmd)
         .status()
         .expect(&format!("Failed to execute 'xdotool key {}", args))
 }

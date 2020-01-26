@@ -1,11 +1,11 @@
 use std::process::Command;
-use std::process::Output;
+use std::process::ExitStatus;
 
 use std::fmt;
 use std::io::{self, Write};
 
 // This function is onl visible crate internally
-pub(crate) fn xdotool_key(args: &str) -> std::process::ExitStatus {
+pub(crate) fn xdotool_key(args: &str) -> ExitStatus {
     println!("{}", format!("xdotool key {}", args));
 
     Command::new("sh")
@@ -31,13 +31,11 @@ pub fn parse_string(s: &str) -> String {
 }
 
 
-pub fn send_keys(keys: &str) {
-    let output = xdotool_key(keys);
-
-    println!("{}", output);
+pub fn send_keys(keys: &str) -> ExitStatus {
+    xdotool_key(keys)
 }
 
-pub fn send_keys_with_options(keys: &str, options: &[&Option]) {
+pub fn send_keys_with_options(keys: &str, options: &[&Option]) -> ExitStatus {
     let mut args = String::new();
     for option in options {
         args = format!("{} {}", args, option);
@@ -45,8 +43,7 @@ pub fn send_keys_with_options(keys: &str, options: &[&Option]) {
 
     args = format!("{} \"{}\"", args, keys);
 
-    let output = xdotool_key(&args);
-    println!("{}", output);
+    xdotool_key(&args)
 }
 
 #[derive(Debug)]

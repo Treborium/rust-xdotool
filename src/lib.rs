@@ -1,3 +1,5 @@
+pub mod keyboard;
+
 #[cfg(test)]
 mod tests {
     #[test]

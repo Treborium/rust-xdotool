@@ -115,14 +115,14 @@ pub mod sub_commands {
         GetWindowFocus,
         WindowSize(OptionVec<super::options::WindowSizeOption>),
         WindowMove(OptionVec<super::options::WindowMoveOption>),
-        WindowFocus(OptionVec<super::options::Sync>),
-        WindowMap(OptionVec<super::options::Sync>),
-        WindowMinimize(OptionVec<super::options::Sync>),
+        WindowFocus(OptionVec<super::options::SyncOption>),
+        WindowMap(OptionVec<super::options::SyncOption>),
+        WindowMinimize(OptionVec<super::options::SyncOption>),
         WindowRaise,
         WindowReparent,
         WindowClose,
         WindowKill,
-        WindowUnmap(OptionVec<super::options::Sync>),
+        WindowUnmap(OptionVec<super::options::SyncOption>),
         SetWindow(OptionVec<super::options::SetWindowOption>),
     }
 
@@ -153,7 +153,7 @@ pub mod sub_commands {
 
     #[derive(Debug)]
     pub enum Desktop {
-        WindowActivate(OptionVec<super::options::Sync>),
+        WindowActivate(OptionVec<super::options::SyncOption>),
         GetActiveWindow,
         SetNumDesktops,
         GetNumDesktops,
@@ -184,7 +184,7 @@ pub mod sub_commands {
 
     #[derive(Debug)]
     pub enum Misc {
-        Exec(OptionVec<super::options::Sync>),
+        Exec(OptionVec<super::options::SyncOption>),
         Sleep,
     }
 
@@ -367,14 +367,14 @@ pub mod options {
     }
 
     #[derive(Debug)]
-    pub enum Sync {
+    pub enum SyncOption {
         Sync,
     }
 
-    impl super::fmt::Display for Sync {
+    impl super::fmt::Display for SyncOption {
         fn fmt(&self, f: &mut super::fmt::Formatter) -> super::fmt::Result {
             match &*self {
-                Sync::Sync => write!(f, "--sync"),
+                SyncOption::Sync => write!(f, "--sync"),
             }
         }
     }

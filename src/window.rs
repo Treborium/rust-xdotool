@@ -1,6 +1,9 @@
 use std::process::Output;
 
-use crate::command::options::{SearchOption, WindowMoveOption, WindowSizeOption, GetWindowGeometryOption, SyncOption, SetWindowOption};
+use crate::command::options::{
+    GetWindowGeometryOption, SearchOption, SetWindowOption, SyncOption, WindowMoveOption,
+    WindowSizeOption,
+};
 use crate::command::{sub_commands, Command, OptionVec};
 use crate::run;
 
@@ -13,7 +16,6 @@ pub fn get_window_pid(window: &str) -> Output {
     let c = Command::Window(sub_commands::Window::GetWindowPid);
     run(c, window)
 }
-
 
 pub fn get_window_name(window: &str) -> Output {
     let c = Command::Window(sub_commands::Window::GetWindowName);
@@ -30,16 +32,21 @@ pub fn get_window_focus(window: &str) -> Output {
     run(c, window)
 }
 
-pub fn set_window_size(window: &str, width: &str, height: &str, options: OptionVec<WindowSizeOption>) -> Output {
+pub fn set_window_size(
+    window: &str,
+    width: &str,
+    height: &str,
+    options: OptionVec<WindowSizeOption>,
+) -> Output {
     let c = Command::Window(sub_commands::Window::WindowSize(options));
-    let args = format!("{} {} {}",window, width, height);
+    let args = format!("{} {} {}", window, width, height);
 
     run(c, &args)
 }
 
 pub fn move_window(window: &str, x: &str, y: &str, options: OptionVec<WindowMoveOption>) -> Output {
     let c = Command::Window(sub_commands::Window::WindowMove(options));
-    let args = format!("{} {} {}",window, x, y);
+    let args = format!("{} {} {}", window, x, y);
 
     run(c, &args)
 }

@@ -18,3 +18,8 @@ pub fn send_key_up(keys: &str, options: OptionVec<KeyboardOption>) -> Output {
     let c = Command::Keyboard(sub_commands::Keyboard::KeyUp(options));
     run(c, keys)
 }
+
+pub fn type_text(text: &str, options: OptionVec<KeyboardOption>) -> Output {
+    let c = Command::Keyboard(sub_commands::Keyboard::Type(options));
+    run(c, text)
+}

@@ -1,6 +1,6 @@
 use std::process::Output;
 
-use crate::command::options::{SyncOption, SetDesktopOption};
+use crate::command::options::{SetDesktopOption, SyncOption};
 use crate::command::{sub_commands, Command, OptionVec};
 use crate::run;
 

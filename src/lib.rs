@@ -4,6 +4,7 @@ use std::process::Output;
 pub mod command;
 pub mod keyboard;
 pub mod window;
+pub mod desktop;
 
 pub fn run(command: command::Command, args: &str) -> Output {
     let cmd = format!("xdotool {} \"{}\"", command, args);

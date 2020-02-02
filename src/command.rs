@@ -159,9 +159,9 @@ pub mod sub_commands {
         GetNumDesktops,
         GetDesktopViewport,
         SetDesktopViewport,
-        SetDesktop,
+        SetDesktop(OptionVec<super::options::SetDesktopOption>),
         GetDesktop,
-        SetDesktopForWindow(OptionVec<super::options::SetDesktopOption>),
+        SetDesktopForWindow,
         GetDesktopForWindow,
     }
 
@@ -174,9 +174,9 @@ pub mod sub_commands {
                 Desktop::GetNumDesktops => write!(f, "get_num_desktop"),
                 Desktop::GetDesktopViewport => write!(f, "get_desktop_viewport"),
                 Desktop::SetDesktopViewport => write!(f, "set_desktop_viewport"),
-                Desktop::SetDesktop => write!(f, "set_desktop"),
+                Desktop::SetDesktop(o) => write!(f, "set_desktop {}", o),
                 Desktop::GetDesktop => write!(f, "get_desktop"),
-                Desktop::SetDesktopForWindow(o) => write!(f, "set_desktop_for_window {}", o),
+                Desktop::SetDesktopForWindow => write!(f, "set_desktop_for_window"),
                 Desktop::GetDesktopForWindow => write!(f, "get_desktop_for_window"),
             }
         }

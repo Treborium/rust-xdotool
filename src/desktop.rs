@@ -1,7 +1,8 @@
 use std::process::Output;
 
 use crate::command::options::{SetDesktopOption, SyncOption};
-use crate::command::{sub_commands, Command, OptionVec};
+use crate::command::{sub_commands, Command};
+use crate::optionvec::OptionVec;
 use crate::run;
 
 pub fn activate_window(window: &str, options: OptionVec<SyncOption>) -> Output {

@@ -1,7 +1,8 @@
 use std::process::Output;
 
 use crate::command::options::SyncOption;
-use crate::command::{sub_commands, Command, OptionVec};
+use crate::command::{sub_commands, Command};
+use crate::optionvec::OptionVec;
 use crate::run;
 
 pub fn exec(command: &str, options: OptionVec<SyncOption>) -> Output {

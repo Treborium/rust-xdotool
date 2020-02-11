@@ -4,7 +4,8 @@ use crate::command::options::{
     GetWindowGeometryOption, SearchOption, SetWindowOption, SyncOption, WindowMoveOption,
     WindowSizeOption,
 };
-use crate::command::{sub_commands, Command, OptionVec};
+use crate::command::{sub_commands, Command};
+use crate::optionvec::OptionVec;
 use crate::run;
 
 pub fn search(s: &str, options: OptionVec<SearchOption>) -> Output {

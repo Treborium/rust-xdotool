@@ -1,26 +1,26 @@
 use std::fmt;
 
 /// A Vec wrapper that implements the `fmt::Display` trait for easy command creation.
-/// 
+///
 /// # Examples
-/// 
+///
 /// Create an empty `OptionVec`:
-/// 
+///
 /// ```
 /// # use xdotool::{OptionVec, option_vec};
-/// 
+///
 /// let o1 = OptionVec::new();
 /// // Or
 /// let o2 = option_vec![];
-/// 
+///
 /// ```
-/// 
+///
 /// Create an `OptionVec` for the search command:
-/// 
+///
 /// ```
 /// # use xdotool::{OptionVec, option_vec};
 /// # use xdotool::command::options;
-/// 
+///
 /// let o = option_vec![
 ///     options::SearchOption::Name,
 ///     options::SearchOption::ClassName,

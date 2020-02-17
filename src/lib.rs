@@ -1,9 +1,9 @@
 //! A simple wrapper for the `xdotool` command line tool.
-//! 
+//!
 //! # Examples
-//! 
+//!
 //! ```
-//! 
+//!
 //! ```
 
 // TODO: Add examples

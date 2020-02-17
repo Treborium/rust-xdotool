@@ -1,7 +1,5 @@
 //! Convenience functions for the window functionality in xdotool.
 
-use std::process::Output;
-
 use crate::command::options::{
     GetWindowGeometryOption, SearchOption, SetWindowOption, SyncOption, WindowMoveOption,
     WindowSizeOption,
@@ -9,6 +7,7 @@ use crate::command::options::{
 use crate::command::{sub_commands, Command};
 use crate::optionvec::OptionVec;
 use crate::run;
+use std::process::Output;
 
 pub fn search(s: &str, options: OptionVec<SearchOption>) -> Output {
     let c = Command::Window(sub_commands::Window::Search(options));

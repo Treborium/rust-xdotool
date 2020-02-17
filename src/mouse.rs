@@ -1,3 +1,5 @@
+//! Convenience functions for the mouse functionality in xdotool.
+
 use std::fmt;
 use std::process::Output;
 

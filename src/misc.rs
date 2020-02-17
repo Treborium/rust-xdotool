@@ -1,3 +1,6 @@
+//! Convenience functions for miscellaneous functionality in xdotool.
+
+
 use std::process::Output;
 
 use crate::command::options::SyncOption;

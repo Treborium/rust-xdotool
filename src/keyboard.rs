@@ -1,3 +1,5 @@
+//! Convenience functions for the keyboard functionality in xdotool.
+
 use std::process::Output;
 
 use crate::command::options::KeyboardOption;

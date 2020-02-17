@@ -1,3 +1,5 @@
+//! Convenience functions for the desktop functionality in xdotool.
+
 use std::process::Output;
 
 use crate::command::options::{SetDesktopOption, SyncOption};

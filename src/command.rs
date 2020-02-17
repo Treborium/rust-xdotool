@@ -1,5 +1,5 @@
-use std::fmt;
 use crate::optionvec::OptionVec;
+use std::fmt;
 
 pub enum Command {
     Keyboard(sub_commands::Keyboard),

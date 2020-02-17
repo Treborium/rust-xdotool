@@ -46,17 +46,17 @@ pub fn move_mouse(x: u16, y: u16, options: OptionVec<MouseMoveOption>) -> Output
 }
 
 /// Move the mouse x,y pixels relative to the current position of the mouse cursor.
-/// 
+///
 /// # Options
-/// 
+///
 /// - `MouseMoveRelativeOption::Polar` Use polar coordinates. This makes `x` an angle (in degrees, 0-360, etc) and `y` the distance. Rotation starts at 'up' (0 degrees) and rotates clockwise: 90 = right, 180 = down, 270 = left. The origin defaults to the center of the current screen.
 /// - `MouseMoveRelativeOption::Sync` After sending the mouse move request, wait until the mouse is actually moved. If no movement is necessary, we will not wait. Note that we wait until the mouse moves at all, not necessarily that it actually reaches your intended destination.
 /// - `MouseMoveRelativeOption::ClearModifiers`
-/// 
+///
 /// # Examples
-/// 
+///
 /// Move the mouse 100 pixels to the right and 300 pixels up and wait for the action to complete:
-/// 
+///
 /// ```
 /// # use xdotool::command::options;
 /// # use xdotool::{mouse, option_vec, OptionVec};
@@ -73,18 +73,18 @@ pub fn move_mouse_relative(x: i16, y: i16, options: OptionVec<MouseMoveRelativeO
 }
 
 /// Send a click, that is, a [`click_down`](fn.click_down.html) followed by [`click_up`](fn.click_up.html) for the given button with a short delay between the two (currently 12ms).
-/// 
+///
 /// # Options
-/// 
+///
 /// - `ClickOption::Repeat(u32)` Specify how many times to click. Default is 1. For a double-click use `ClickOption::Repeat(2)`.
 /// - `ClickOption::Delay(u32)` Specify how long, in milliseconds, to delay between clicks. This option is not used if the `ClickOption::Repeat` option is set to 1 (default).
-/// - `ClickOption::Window(String)` Specify a window to send a click to. 
+/// - `ClickOption::Window(String)` Specify a window to send a click to.
 /// - `ClickOption::ClearModifiers`
-/// 
+///
 /// # Examples
-/// 
+///
 /// Send a left double-click to the current mouse position:
-/// 
+///
 /// ```
 /// # use xdotool::command::options;
 /// # use xdotool::mouse::{self, Button};
@@ -99,12 +99,12 @@ pub fn click(button: Button, options: OptionVec<ClickOption>) -> Output {
 }
 
 /// Same as [`click`](fn.click.html), except only a mouse down is sent.
-/// 
+///
 /// # Options
-/// 
+///
 /// - `ClickOption::Repeat(u32)` Specify how many times to click. Default is 1. For a double-click use `ClickOption::Repeat(2)`.
 /// - `ClickOption::Delay(u32)` Specify how long, in milliseconds, to delay between clicks. This option is not used if the `ClickOption::Repeat` option is set to 1 (default).
-/// - `ClickOption::Window(String)` Specify a window to send a click to. 
+/// - `ClickOption::Window(String)` Specify a window to send a click to.
 /// - `ClickOption::ClearModifiers`
 pub fn click_down(button: Button, options: OptionVec<ClickOption>) -> Output {
     let c = Command::Mouse(sub_commands::Mouse::MouseDown(options));
@@ -112,12 +112,12 @@ pub fn click_down(button: Button, options: OptionVec<ClickOption>) -> Output {
 }
 
 /// Same as [`click`](fn.click.html), except only a mouse up is sent.
-/// 
+///
 /// # Options
-/// 
+///
 /// - `ClickOption::Repeat(u32)` Specify how many times to click. Default is 1. For a double-click use `ClickOption::Repeat(2)`.
 /// - `ClickOption::Delay(u32)` Specify how long, in milliseconds, to delay between clicks. This option is not used if the `ClickOption::Repeat` option is set to 1 (default).
-/// - `ClickOption::Window(String)` Specify a window to send a click to. 
+/// - `ClickOption::Window(String)` Specify a window to send a click to.
 /// - `ClickOption::ClearModifiers`
 pub fn click_up(button: Button, options: OptionVec<ClickOption>) -> Output {
     let c = Command::Mouse(sub_commands::Mouse::MouseUp(options));
@@ -125,11 +125,11 @@ pub fn click_up(button: Button, options: OptionVec<ClickOption>) -> Output {
 }
 
 /// Outputs the x, y, screen, and window id of the mouse cursor. Screen numbers will be nonzero if you have multiple monitors and are not using Xinerama.
-/// 
+///
 /// # Examples
-/// 
-/// Print the x, y, screen and window id of the mouse cursor: 
-/// 
+///
+/// Print the x, y, screen and window id of the mouse cursor:
+///
 /// ```
 /// # use xdotool::command::options;
 /// # use xdotool::mouse;
@@ -143,16 +143,16 @@ pub fn get_mouse_location() -> Output {
 }
 
 /// Bind an action to events when the mouse hits the screen edge or corner.
-/// 
+///
 /// # Options
-/// 
+///
 /// - `BehaveScreenEdgeOption::Delay(u32)` Delay in milliseconds before running the command. This allows you to require a given edge or corner to be held for a short period before your command will run. If you leave the edge or corner before the delay expires then the time will reset.
 /// - `BehaveScreenEdgeOption::Quiesce(u32)`  Delay in milliseconds before the next command will run. This helps prevent accidentally running your command extra times; especially useful if you have a very short --delay (like the default of 0).
-/// 
+///
 /// # Examples
-/// 
+///
 /// Open firefox if mouse is in top right corner for half a second:
-/// 
+///
 /// ```
 /// # use xdotool::command::options;
 /// # use xdotool::mouse::{self, ScreenEdge};

@@ -45,7 +45,6 @@ pub use optionvec::OptionVec;
 /// ```
 pub fn run(command: command::Command, args: &str) -> Output {
     let cmd = format!("xdotool {} {}", command, args);
-    println!("{}", cmd);
 
     Command::new("sh")
         .arg("-c")

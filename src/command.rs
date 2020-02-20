@@ -1,6 +1,8 @@
 use crate::optionvec::OptionVec;
 use std::fmt;
 
+// TODO: Check if Command is even necessary or sub_command sufficies
+
 pub enum Command {
     Keyboard(sub_commands::Keyboard),
     Mouse(sub_commands::Mouse),

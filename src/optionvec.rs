@@ -8,10 +8,10 @@ use std::fmt;
 ///
 /// ```
 /// # use xdotool::{OptionVec, option_vec};
-///
-/// let o1 = OptionVec::new();
+/// # use xdotool::command::options;
+/// let o1 = OptionVec::<options::KeyboardOption>::new();
 /// // Or
-/// let o2 = option_vec![];
+/// let o2: OptionVec<options::KeyboardOption> = option_vec![];
 ///
 /// ```
 ///
@@ -24,7 +24,7 @@ use std::fmt;
 /// let o = option_vec![
 ///     options::SearchOption::Name,
 ///     options::SearchOption::ClassName,
-///     options::Any,
+///     options::SearchOption::Any,
 /// ];
 /// ```
 #[derive(Debug, Default)]

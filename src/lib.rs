@@ -1,4 +1,6 @@
 //! A simple wrapper for the `xdotool` command line tool.
+//! 
+//! While I've tried my best documenting everything as detailed as possible, please look at the man page of `xdotool` for detailed information.
 //!
 //! # Examples
 //!

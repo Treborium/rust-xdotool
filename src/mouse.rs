@@ -155,19 +155,19 @@ pub fn get_mouse_location() -> Output {
 ///
 /// Open firefox if mouse is in top right corner for half a second:
 ///
-/// ```
-/// # use xdotool::command::options;
+/// ```no_run
+/// # use xdotool::command::{options, sub_commands, Command};
 /// # use xdotool::mouse::{self, ScreenEdge};
 /// # use xdotool::{option_vec, OptionVec};
 /// let output = mouse::behave_screen_edge(
 ///     ScreenEdge::TopRight,
 ///     Command::Keyboard(sub_commands::Keyboard::Key(OptionVec::new())),
-///     option_vec![options::BehaveScreenEdge::Delay(500)]
+///     option_vec![options::BehaveScreenEdgeOption::Delay(500)]
 /// );
 /// ```
 
-// TODO: Fix the command argument. Currently it only supports commands without arguments and it's not possible to pass shell commands
 
+// TODO: Fix the command argument. Currently it only supports commands without arguments and it's not possible to pass shell commands
 pub fn behave_screen_edge(
     screen_edge: ScreenEdge,
     cmd: Command,

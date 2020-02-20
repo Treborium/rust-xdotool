@@ -4,7 +4,7 @@ description = "A wrapper for the command line tool xdotool written in Rust"
 repository = "https://github.com/Treborium/rust-xdotool"
 
 readme = "README.md"
-keywords = ["xdotool", "window", "manager", "wm", "linux"]
+keywords = ["xdotool", "window", "manager", "wm", "linux", "input", "automation"]
 categories = ["api-bindings", "command-line-interface", "os::unix-apis", "os"]
 documentation = "https://docs.rs/xdotool/latest/xdotool/"
 license = "GPL-3.0-or-later"

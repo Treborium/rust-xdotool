@@ -9,7 +9,7 @@ categories = ["api-bindings", "command-line-interface", "os::unix-apis", "os"]
 documentation = "https://docs.rs/xdotool/latest/xdotool/"
 license = "GPL-3.0-or-later"
 
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Robert Fuchs <robertfuchs97@gmail.com>"]
 edition = "2018"
 

@@ -46,4 +46,4 @@ xdotool = { git = "https://github.com/Treborium/rust-xdotool" }
 
 ## Examples
 
-For examples on a certain function please view the [documentation](). 
+For examples on a certain function please view the [documentation](https://docs.rs/xdotool/latest/xdotool/). 

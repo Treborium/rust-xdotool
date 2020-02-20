@@ -34,7 +34,7 @@ Add `xdotool` to your dependencies in your `Corgo.toml`
 
 ```toml
 [dependencies]
-xdotool = "0.1.0"
+xdotool = "0.0.1"
 ```
 
 If you want the latest build use the GitHub repository as your uplink:

@@ -1,9 +1,21 @@
 [package]
 name = "xdotool"
 description = "A wrapper for the command line tool xdotool written in Rust"
-version = "0.1.0"
+repository = "https://github.com/Treborium/rust-xdotool"
+
+readme = "README.md"
+keywords = ["xdotool", "window", "manager", "wm", "linux"]
+categories = ["api-bindings", "command-line-interface", "os::unix-apis", "os"]
+documentation = "https://docs.rs/xdotool/latest/xdotool/"
+license = "GPL-3.0-or-later"
+
+version = "0.0.1"
 authors = ["Robert Fuchs <robertfuchs97@gmail.com>"]
 edition = "2018"
+
+[lib]
+name = "xdotool"
+path = "src/lib.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

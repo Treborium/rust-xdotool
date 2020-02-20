@@ -34,13 +34,13 @@ pub fn send_key(keys: &str, options: OptionVec<KeyboardOption>) -> Output {
     run(c, keys)
 }
 
-/// Same as [`send_key`}(fn.send_key.html), except only keydown (press) events are sent.
+/// Same as [`send_key`](fn.send_key.html), except only keydown (press) events are sent.
 pub fn send_key_down(keys: &str, options: OptionVec<KeyboardOption>) -> Output {
     let c = Command::Keyboard(sub_commands::Keyboard::KeyDown(options));
     run(c, keys)
 }
 
-/// Same as [`send_key`}(fn.send_key.html), except only keyup (release) events are sent.
+/// Same as [`send_key`](fn.send_key.html), except only keyup (release) events are sent.
 pub fn send_key_up(keys: &str, options: OptionVec<KeyboardOption>) -> Output {
     let c = Command::Keyboard(sub_commands::Keyboard::KeyUp(options));
     run(c, keys)
@@ -48,7 +48,7 @@ pub fn send_key_up(keys: &str, options: OptionVec<KeyboardOption>) -> Output {
 
 /// Types as if you had typed it. Supports newlines tabs (ASCII newline and tab).
 /// Each keystroke is separated by a delay given by `KeyboardOption::Delay(u32)`.
-/// See [`send_key`}(fn.send_key.html) for information about possible options and examples. 
+/// See [`send_key`](fn.send_key.html) for information about possible options and examples. 
 pub fn type_text(text: &str, options: OptionVec<KeyboardOption>) -> Output {
     let c = Command::Keyboard(sub_commands::Keyboard::Type(options));
     run(c, text)

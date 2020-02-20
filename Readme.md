@@ -4,7 +4,9 @@ A wrapper for the command line tool xdotool written in Rust
 
 ## Note
 
-While I've tried my best documenting everything as detailed as possible, please look at the man page of `xdotool` for detailed information. If a function does not behave like xdotool would, please submit an issue or even better a pull request :)
+I've tried my best documenting everything as detailed as possible.
+For even more information please look at the man page of `xdotool`.
+If a function does not behave like xdotool would, please submit an issue or even better a pull request :)
 
 ## Dependencies
 

@@ -70,7 +70,7 @@ pub fn move_mouse(x: u16, y: u16, options: OptionVec<MouseMoveOption>) -> Output
 /// ```
 pub fn move_mouse_relative(x: i16, y: i16, options: OptionVec<MouseMoveRelativeOption>) -> Output {
     let c = Command::Mouse(sub_commands::Mouse::MouseMoveRelative(options));
-    let args = format!("{} {}", x, y);
+    let args = format!("-- {} {}", x, y);
     run(c, &args)
 }
 
